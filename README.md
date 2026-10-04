@@ -1,4 +1,18 @@
-# Job Copilot · AI 求职决策与管理
+<div align="center">
+
+# Job Copilot
+
+### AI 求职决策与简历优化
+
+**有依据的分析 · 可核对的经历 · 用户保留最终判断**
+
+[产品思考](docs/PRODUCT.md) · [技术架构](docs/ARCHITECTURE.md) · [当前进度](docs/STATUS.md) · [个人主页](https://github.com/jiuyier369-design)
+
+</div>
+
+![Job Copilot 概念封面](docs/images/job-copilot-concept-cover.png)
+
+<sub>AI 生成概念封面，仅表达产品主题；不是实际页面截图或已上线能力证明。</sub>
 
 > **持续完善中的工程项目｜已有可审查成果｜尚未正式上线**
 > 本仓库用于展示需求取舍、证据约束、Agent 协作开发与工程验收。真实生成按钮仍关闭，完整 v2 流程及报告质量尚未验收。
@@ -17,6 +31,12 @@ Job Copilot 从求职中的实际问题出发：背景资料重复提供、JD �
 
 **快速阅读：** [当前进度](docs/STATUS.md) · [架构](docs/ARCHITECTURE.md) · [产品决策](docs/PRODUCT.md) · [验证与限制](docs/VERIFICATION.md) · [协作过程](docs/COLLABORATION.md) · [公开范围](docs/PUBLICATION.md)
 
+## 产品方向
+
+![经历与岗位要求的证据核对概念](docs/images/job-copilot-evidence-concept.png)
+
+<sub>AI 概念配图，用于解释设计目标；实际实现与验收边界以以下进度表及文档为准。</sub>
+
 ## 值得查看的工程设计
 
 - **证据约束：** 分开表达岗位事实、画像证据、模型推断与待核验条件；校验覆盖范围、引用和资历边界。
@@ -29,8 +49,26 @@ Job Copilot 从求职中的实际问题出发：背景资料重复提供、JD �
 
 下列截图取自虚构材料的本地展示，不能作为真实用户结果或模型质量通过的证据。
 
+<details>
+<summary><strong>查看实际本地页面：证据核对原型</strong></summary>
+
 ![证据核对原型](docs/images/evidence-plan.png)
+
+</details>
+
+<details>
+<summary><strong>查看实际本地页面：虚构报告展示</strong></summary>
+
 ![虚构报告展示](docs/images/report-demo.png)
+
+</details>
+
+<details>
+<summary><strong>查看手机端核对页面</strong></summary>
+
+![手机证据核对](docs/images/evidence-plan-mobile.png)
+
+</details>
 
 ## 技术栈
 
