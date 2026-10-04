@@ -1,0 +1,204 @@
+/* Page chrome for the /login-demo demonstration route.
+   Lives under components/sign-in so no global stylesheet is touched. */
+
+.page {
+  min-height: 100vh;
+  background: #eef2f8;
+  padding: 16px 12px 32px;
+  color: #0f172a;
+}
+
+.shell {
+  width: 100%;
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+/* Prominent, first thing on the page: this form must never collect real credentials. */
+.demoWarning {
+  margin: 0 0 12px;
+  border: 2px solid #d97706;
+  border-radius: 12px;
+  background: #fffbeb;
+  padding: 10px 12px;
+  text-align: center;
+  font-size: 14px;
+  line-height: 21px;
+  font-weight: 700;
+  color: #92400e;
+}
+
+/* ---------- demo scenario switcher ---------- */
+
+.scenarioBar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+  align-items: center;
+  border: 1px solid #cbd5e1;
+  border-radius: 14px;
+  background: #ffffff;
+  padding: 10px 12px;
+}
+
+.scenarioLabel {
+  flex: none;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: #475569;
+}
+
+.scenarioButtons {
+  display: flex;
+  flex: 1 1 auto;
+  flex-wrap: wrap;
+  gap: 6px;
+  min-width: 0;
+}
+
+.scenarioButton {
+  flex: 1 1 auto;
+  min-width: 0;
+  cursor: pointer;
+  border: 1px solid #cbd5e1;
+  border-radius: 999px;
+  background: #ffffff;
+  padding: 6px 12px;
+  font: inherit;
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: 600;
+  color: #334155;
+  white-space: nowrap;
+}
+
+.scenarioButton:hover:not(:disabled) {
+  border-color: #7dd3fc;
+  background: #f0f9ff;
+}
+
+.scenarioButton[aria-pressed="true"] {
+  border-color: #0284c7;
+  background: #0284c7;
+  color: #ffffff;
+}
+
+.scenarioButton:focus-visible {
+  outline: 3px solid #0284c7;
+  outline-offset: 1px;
+}
+
+/* Mode switching is blocked while a simulated request is in flight. */
+.scenarioButton:disabled {
+  cursor: not-allowed;
+  border-color: #e2e8f0;
+  background: #f1f5f9;
+  color: #94a3b8;
+}
+
+.scenarioNote {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 8px 2px 14px;
+  font-size: 12px;
+  line-height: 18px;
+  color: #475569;
+}
+
+.scenarioNoteLabel {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-weight: 600;
+  color: #0369a1;
+}
+
+/* ---------- card ---------- */
+
+.card {
+  border: 1px solid #cbd5e1;
+  border-radius: 18px;
+  background: #ffffff;
+  padding: 18px 16px;
+}
+
+.cardHeader {
+  margin-bottom: 16px;
+}
+
+.eyebrow {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: #0369a1;
+}
+
+.title {
+  margin: 8px 0 0;
+  font-size: 22px;
+  line-height: 30px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: #0f172a;
+}
+
+.subtitle {
+  margin: 10px 0 0;
+  font-size: 13px;
+  line-height: 21px;
+  color: #475569;
+}
+
+.successNotice {
+  margin: 14px 0 0;
+  border: 1px solid #6ee7b7;
+  border-radius: 10px;
+  background: #ecfdf5;
+  padding: 10px 12px;
+  font-size: 13px;
+  line-height: 20px;
+  font-weight: 600;
+  color: #047857;
+}
+
+/* ---------- diagnostics ---------- */
+
+.diagnostics {
+  margin: 16px 0 0;
+  border-top: 1px dashed #e2e8f0;
+  padding-top: 12px;
+  display: grid;
+  gap: 6px;
+}
+
+.diagnosticRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 4px 12px;
+  min-width: 0;
+}
+
+.diagnosticLabel {
+  font-size: 12px;
+  line-height: 18px;
+  color: #64748b;
+}
+
+.diagnosticValue {
+  margin: 0;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: 600;
+  color: #0f172a;
+  overflow-wrap: anywhere;
+}
+
+.diagnosticsNote {
+  margin: 8px 0 0;
+  font-size: 12px;
+  line-height: 18px;
+  color: #94a3b8;
+}

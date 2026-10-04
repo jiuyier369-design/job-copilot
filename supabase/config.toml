@@ -1,0 +1,13 @@
+# CLI project configuration only; does not start containers or deploy the website.
+project_id = "job-copilot-test"
+
+[db.migrations]
+enabled = true
+schema_paths = []
+
+[db.seed]
+enabled = false
+
+# DS3B1 test-only deployment. Handler validates independent worker secret before privileged work.
+[functions.analysis-worker]
+verify_jwt = false

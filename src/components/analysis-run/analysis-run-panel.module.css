@@ -1,0 +1,328 @@
+/* Styles for the analysis run panel. Local to components/analysis-run,
+   so no shared or global stylesheet is touched. */
+
+.panel {
+  display: grid;
+  gap: 14px;
+  min-width: 0;
+}
+
+.card {
+  min-width: 0;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  background: #ffffff;
+  padding: 16px;
+  box-shadow: 0 12px 32px -28px rgba(15, 23, 42, 0.35);
+}
+
+.cardTitle {
+  margin: 0 0 12px;
+  font-size: 15px;
+  line-height: 23px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+/* ---------- fields ---------- */
+
+.fieldGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  min-width: 0;
+}
+
+@media (min-width: 640px) {
+  .fieldGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.field {
+  display: grid;
+  gap: 5px;
+  min-width: 0;
+}
+
+.fieldWide {
+  grid-column: 1 / -1;
+}
+
+.label {
+  font-size: 13px;
+  line-height: 19px;
+  font-weight: 600;
+  color: #334155;
+}
+
+/* Visible required marker; the requirement itself is carried by aria-required. */
+.requiredMark {
+  margin-left: 3px;
+  color: #dc2626;
+  font-weight: 700;
+}
+
+.input {
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  border: 1px solid #cbd5e1;
+  border-radius: 9px;
+  background: #ffffff;
+  padding: 9px 11px;
+  font: inherit;
+  font-size: 14px;
+  line-height: 21px;
+  color: #0f172a;
+}
+
+.input::placeholder {
+  color: #94a3b8;
+}
+
+.input:focus-visible {
+  border-color: #0284c7;
+  outline: 3px solid #0284c7;
+  outline-offset: 1px;
+}
+
+.input[aria-invalid="true"] {
+  border-color: #dc2626;
+}
+
+.input:disabled {
+  cursor: not-allowed;
+  border-color: #e2e8f0;
+  background: #f1f5f9;
+  color: #94a3b8;
+}
+
+.fieldError {
+  margin: 0;
+  font-size: 12.5px;
+  line-height: 19px;
+  font-weight: 600;
+  color: #b91c1c;
+  overflow-wrap: anywhere;
+}
+
+.hint {
+  margin: 12px 0 0;
+  font-size: 12px;
+  line-height: 19px;
+  color: #64748b;
+}
+
+/* ---------- state card ---------- */
+
+.stateCard {
+  min-width: 0;
+  border: 1px solid #e2e8f0;
+  border-left-width: 4px;
+  border-radius: 12px;
+  padding: 14px 16px;
+}
+
+.stateTitle {
+  margin: 0;
+  font-size: 15px;
+  line-height: 23px;
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+.stateMessage {
+  margin: 6px 0 0;
+  font-size: 13px;
+  line-height: 21px;
+  overflow-wrap: anywhere;
+}
+
+.actionNotice {
+  margin: 10px 0 0;
+  border-radius: 8px;
+  background: #ffffff;
+  padding: 8px 10px;
+  font-size: 12.5px;
+  line-height: 20px;
+  overflow-wrap: anywhere;
+}
+
+.toneReady {
+  border-color: #bae6fd;
+  border-left-color: #0284c7;
+  background: #f0f9ff;
+}
+
+.toneReady .stateTitle,
+.toneReady .actionNotice {
+  color: #075985;
+}
+
+.toneReady .stateMessage {
+  color: #0c4a6e;
+}
+
+.toneBlocked {
+  border-color: #fde68a;
+  border-left-color: #d97706;
+  background: #fffbeb;
+}
+
+.toneBlocked .stateTitle {
+  color: #92400e;
+}
+
+.toneBlocked .stateMessage,
+.toneBlocked .actionNotice {
+  color: #7c4a09;
+}
+
+.toneBusy {
+  border-color: #cbd5e1;
+  border-left-color: #475569;
+  background: #f8fafc;
+}
+
+.toneBusy .stateTitle {
+  color: #1e293b;
+}
+
+.toneBusy .stateMessage,
+.toneBusy .actionNotice {
+  color: #475569;
+}
+
+.toneCompleted {
+  border-color: #6ee7b7;
+  border-left-color: #059669;
+  background: #ecfdf5;
+}
+
+.toneCompleted .stateTitle {
+  color: #065f46;
+}
+
+.toneCompleted .stateMessage,
+.toneCompleted .actionNotice {
+  color: #047857;
+}
+
+.toneFailed,
+.toneError {
+  border-color: #fca5a5;
+  border-left-color: #dc2626;
+  background: #fef2f2;
+}
+
+.toneFailed .stateTitle,
+.toneError .stateTitle {
+  color: #991b1b;
+}
+
+.toneFailed .stateMessage,
+.toneError .stateMessage,
+.toneFailed .actionNotice,
+.toneError .actionNotice {
+  color: #7f1d1d;
+}
+
+/* An undetermined result must not read like an ordinary notice. */
+.toneUncertain {
+  border-color: #fdba74;
+  border-left-color: #c2410c;
+  background: #fff7ed;
+  box-shadow: inset 0 0 0 1px #fed7aa;
+}
+
+.toneUncertain .stateTitle {
+  color: #9a3412;
+}
+
+.toneUncertain .stateMessage,
+.toneUncertain .actionNotice {
+  color: #7c2d12;
+}
+
+/* ---------- actions ---------- */
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.primaryButton,
+.secondaryButton,
+.ghostButton {
+  cursor: pointer;
+  border: 1px solid #cbd5e1;
+  border-radius: 9px;
+  background: #ffffff;
+  padding: 9px 15px;
+  font: inherit;
+  font-size: 13px;
+  line-height: 20px;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+.primaryButton {
+  border-color: #0f172a;
+  background: #0f172a;
+  color: #ffffff;
+}
+
+.primaryButton:hover:not(:disabled) {
+  background: #1e293b;
+}
+
+.secondaryButton {
+  color: #1e293b;
+}
+
+.secondaryButton:hover:not(:disabled) {
+  border-color: #7dd3fc;
+  background: #f0f9ff;
+}
+
+.ghostButton {
+  border-color: transparent;
+  background: transparent;
+  color: #0369a1;
+}
+
+.ghostButton:hover:not(:disabled) {
+  border-color: #bae6fd;
+  background: #f0f9ff;
+}
+
+.primaryButton:focus-visible,
+.secondaryButton:focus-visible,
+.ghostButton:focus-visible {
+  outline: 3px solid #0284c7;
+  outline-offset: 2px;
+}
+
+.primaryButton:disabled,
+.secondaryButton:disabled,
+.ghostButton:disabled {
+  cursor: not-allowed;
+  border-color: #e2e8f0;
+  background: #f1f5f9;
+  color: #94a3b8;
+}
+
+/* ---------- host safety copy ---------- */
+
+.safety {
+  margin: 0;
+  border-radius: 10px;
+  background: #f8fafc;
+  padding: 10px 12px;
+  font-size: 12px;
+  line-height: 19px;
+  color: #64748b;
+  overflow-wrap: anywhere;
+}

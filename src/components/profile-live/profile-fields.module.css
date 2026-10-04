@@ -1,0 +1,226 @@
+/* Layout for the live profile fields. Local to components/profile-live,
+   so no shared or global stylesheet is touched. */
+
+.group {
+  /* Fieldsets default to `min-inline-size: min-content`, which defeats shrinking
+     and can force horizontal overflow inside a narrow column. */
+  min-inline-size: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.legend {
+  display: block;
+  width: 100%;
+  padding: 0;
+  font-size: 18px;
+  line-height: 26px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+/* ---------- generic field pieces ---------- */
+
+.block {
+  display: grid;
+  gap: 5px;
+  min-width: 0;
+  margin-top: 12px;
+}
+
+.label {
+  font-size: 13px;
+  line-height: 19px;
+  font-weight: 600;
+  color: #334155;
+}
+
+.hint,
+.empty {
+  margin: 0;
+  font-size: 12px;
+  line-height: 19px;
+  color: #64748b;
+  overflow-wrap: anywhere;
+}
+
+.empty {
+  margin-top: 12px;
+  border: 1px dashed #cbd5e1;
+  border-radius: 12px;
+  background: #f8fafc;
+  padding: 12px;
+  font-size: 13px;
+  line-height: 21px;
+}
+
+.input,
+.textarea,
+.select {
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  border: 1px solid #cbd5e1;
+  border-radius: 9px;
+  background: #ffffff;
+  padding: 8px 10px;
+  font: inherit;
+  font-size: 14px;
+  line-height: 21px;
+  color: #0f172a;
+}
+
+.textarea {
+  resize: vertical;
+}
+
+.input:focus-visible,
+.textarea:focus-visible,
+.select:focus-visible {
+  border-color: #0284c7;
+  outline: 3px solid #0284c7;
+  outline-offset: 1px;
+}
+
+.input:disabled,
+.textarea:disabled,
+.select:disabled {
+  cursor: not-allowed;
+  border-color: #e2e8f0;
+  background: #f1f5f9;
+  color: #94a3b8;
+}
+
+/* ---------- fact list ---------- */
+
+.factList {
+  list-style: none;
+  margin: 16px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 12px;
+}
+
+.fact {
+  min-width: 0;
+  border: 1px solid #cbd5e1;
+  border-radius: 14px;
+  background: #ffffff;
+  padding: 12px;
+}
+
+/* The whole card is marked, not just the textarea, so the problem is findable at a glance. */
+.factInvalid {
+  border-color: #dc2626;
+  background: #fff5f5;
+  box-shadow: inset 3px 0 0 0 #dc2626;
+}
+
+.factId {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 6px;
+  margin: 0;
+  min-width: 0;
+}
+
+.factFooter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.factIdLabel {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: #64748b;
+}
+
+/* Long ids and long organization names wrap instead of widening the card. */
+.factIdValue {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: 600;
+  color: #475569;
+  overflow-wrap: anywhere;
+  word-break: break-all;
+}
+
+.error {
+  margin: 0;
+  font-size: 13px;
+  line-height: 19px;
+  font-weight: 600;
+  color: #b91c1c;
+}
+
+/* ---------- grouping of two related fields ---------- */
+
+/* Single column by default; the paired rows go side by side on wider screens. */
+.pair {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0 14px;
+}
+
+@media (min-width: 640px) {
+  .pair {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* ---------- buttons ---------- */
+
+.removeButton,
+.addButton {
+  cursor: pointer;
+  border: 1px solid #cbd5e1;
+  border-radius: 9px;
+  background: #ffffff;
+  padding: 7px 13px;
+  font: inherit;
+  font-size: 13px;
+  line-height: 19px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.removeButton {
+  border-color: #fca5a5;
+  color: #b91c1c;
+}
+
+.removeButton:hover:not(:disabled) {
+  background: #fef2f2;
+}
+
+.addButton {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 16px;
+  color: #334155;
+}
+
+.addButton:hover:not(:disabled) {
+  border-color: #7dd3fc;
+  background: #f0f9ff;
+}
+
+.removeButton:focus-visible,
+.addButton:focus-visible {
+  outline: 3px solid #0284c7;
+  outline-offset: 2px;
+}
+
+.removeButton:disabled,
+.addButton:disabled {
+  cursor: not-allowed;
+  border-color: #e2e8f0;
+  background: #f1f5f9;
+  color: #94a3b8;
+}

@@ -1,0 +1,12 @@
+.page { max-width: 1280px; margin: auto; padding: 24px; color: #0f172a; }
+.header, .feedback { padding: 20px; border: 1px solid #cbd5e1; border-radius: 12px; background: #fff; }
+.header p, .feedback p { line-height: 1.7; margin: 10px 0; }
+.toolbar { display: flex; flex-wrap: wrap; gap: 10px; margin: 16px 0; }
+.toolbar button { padding: 10px; border: 1px solid #64748b; border-radius: 6px; cursor: pointer; }
+.toolbar button:disabled { color: #64748b; cursor: not-allowed; }
+.toolbar button:focus-visible, .feedback select:focus-visible, .feedback textarea:focus-visible { outline: 3px solid #2563eb; outline-offset: 2px; }
+.feedback { display: grid; gap: 14px; }
+.feedback label { display: grid; gap: 7px; }
+.feedback select, .feedback textarea { box-sizing: border-box; width: 100%; min-width: 0; padding: 10px; border: 1px solid #94a3b8; border-radius: 6px; font: inherit; }
+.feedback textarea { resize: vertical; }
+@media (max-width: 480px) { .page { padding: 12px; } .header, .feedback { padding: 12px; } .toolbar button { width: 100%; } }

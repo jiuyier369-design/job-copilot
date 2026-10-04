@@ -1,0 +1,15 @@
+node_modules/
+.next/
+out/
+.env*
+!.env.example
+*.tsbuildinfo
+npm-debug.log*
+.workbuddy/
+.supabase-test-logs/
+supabase/.temp/
+supabase/.branches/
+*.enc
+*.key
+*.pem
+private-publication-audit/

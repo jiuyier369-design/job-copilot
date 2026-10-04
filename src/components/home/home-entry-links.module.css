@@ -1,0 +1,128 @@
+/* Entry cards for the home route. Route-local to components/home,
+   so no shared or global stylesheet is touched. */
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+@media (min-width: 760px) {
+  .list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.item {
+  min-width: 0;
+}
+
+.card {
+  position: relative;
+  display: block;
+  height: 100%;
+  box-sizing: border-box;
+  min-width: 0;
+  border: 1px solid #cbd5e1;
+  border-radius: 16px;
+  background: #ffffff;
+  padding: 16px 40px 16px 16px;
+  text-decoration: none;
+  color: inherit;
+  box-shadow: 0 16px 40px -34px rgba(15, 23, 42, 0.35);
+}
+
+.card:hover {
+  border-color: #7dd3fc;
+  background: #f8fcff;
+}
+
+/* Keyboard focus must stay clearly visible on the whole card. */
+.card:focus-visible {
+  outline: 3px solid #0284c7;
+  outline-offset: 2px;
+}
+
+.badge {
+  display: inline-flex;
+  max-width: 100%;
+  align-items: center;
+  border-radius: 999px;
+  padding: 2px 9px;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 18px;
+  box-shadow: inset 0 0 0 1px currentColor;
+  white-space: nowrap;
+}
+
+/* The three display-only pages must read clearly as demonstrations. */
+.badgeDemo {
+  background: #fffbeb;
+  color: #92400e;
+}
+
+/* A test account is a different caveat from a demonstration. */
+.badgeTest {
+  background: #eff6ff;
+  color: #1d4ed8;
+}
+
+.cardTitle {
+  margin: 10px 0 0;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 700;
+  color: #0f172a;
+  overflow-wrap: anywhere;
+}
+
+.cardDescription {
+  margin: 6px 0 0;
+  font-size: 13px;
+  line-height: 21px;
+  color: #475569;
+  overflow-wrap: anywhere;
+}
+
+.arrow {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  font-size: 15px;
+  line-height: 20px;
+  color: #94a3b8;
+}
+
+.card:hover .arrow {
+  color: #0284c7;
+}
+
+/* ---------- empty state ---------- */
+
+.empty {
+  border: 1px dashed #94a3b8;
+  border-radius: 16px;
+  background: #ffffff;
+  padding: 24px 16px;
+  text-align: center;
+}
+
+.emptyTitle {
+  margin: 0;
+  font-size: 15px;
+  line-height: 23px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.emptyText {
+  margin: 8px auto 0;
+  max-width: 44ch;
+  font-size: 13px;
+  line-height: 21px;
+  color: #64748b;
+}

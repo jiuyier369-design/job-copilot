@@ -1,0 +1,89 @@
+/* Page chrome for the /profile demonstration route.
+   Lives under components/profile so no global stylesheet is touched. */
+
+.page {
+  min-height: 100vh;
+  background: #eef2f8;
+  padding: 16px 12px 0;
+}
+
+.shell {
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.scenarioBar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+  align-items: center;
+  border: 1px solid #cbd5e1;
+  border-radius: 14px;
+  background: #ffffff;
+  padding: 10px 12px;
+}
+
+.scenarioLabel {
+  flex: none;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: #475569;
+}
+
+.scenarioButtons {
+  display: flex;
+  flex: 1 1 auto;
+  flex-wrap: wrap;
+  gap: 6px;
+  min-width: 0;
+}
+
+.scenarioButton {
+  flex: 1 1 auto;
+  min-width: 0;
+  cursor: pointer;
+  border: 1px solid #cbd5e1;
+  border-radius: 999px;
+  background: #ffffff;
+  padding: 6px 12px;
+  font: inherit;
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: 600;
+  color: #334155;
+  white-space: nowrap;
+}
+
+.scenarioButton:hover {
+  border-color: #7dd3fc;
+  background: #f0f9ff;
+}
+
+.scenarioButton[aria-pressed="true"] {
+  border-color: #0284c7;
+  background: #0284c7;
+  color: #ffffff;
+}
+
+.scenarioButton:focus-visible {
+  outline: 3px solid #0284c7;
+  outline-offset: 1px;
+}
+
+.scenarioNote {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 8px 2px 14px;
+  font-size: 12px;
+  line-height: 18px;
+  color: #475569;
+}
+
+.scenarioNoteLabel {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-weight: 600;
+  color: #0369a1;
+}
